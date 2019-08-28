@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'SFCompact Text';
+    src: url('SFCompactText-Regular.woff2') format('woff2'),
+        url('SFCompactText-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

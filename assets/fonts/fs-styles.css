@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'FSLola-ExtraBold';
+  src: url('FSLola-ExtraBold.eot?#iefix') format('embedded-opentype'),  url('FSLola-ExtraBold.otf')  format('opentype'),
+	     url('FSLola-ExtraBold.woff') format('woff'), url('FSLola-ExtraBold.ttf')  format('truetype'), url('FSLola-ExtraBold.svg#FSLola-ExtraBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

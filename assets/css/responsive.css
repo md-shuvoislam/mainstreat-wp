@@ -1,0 +1,99 @@
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+
+}
+
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .main-menu ul li a {
+        font-size: 15px;
+    }
+    .main-menu ul {
+        margin: 30px 0 0 0;
+        float: left;
+    }
+    .hero-text-right img {
+        float: left;
+        padding-top: 40px;
+    }
+    .services-item {
+        margin: 0 auto;
+        width: 350px;
+        padding-top: 60px;
+    }
+    .website-build-area img, .google-area img, .social-area img{
+        padding-top: 40px;
+    } 
+}
+
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) {
+    .responsive-menu-wrap {
+        top: 5%;
+    }
+    .responsive-menu-wrap {
+        display: block;
+        position: fixed;
+        right: 15px;
+        top: 5%;
+        z-index: 99;
+    }
+    .responsive-menu-wrap .slicknav_menu {
+        background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+        margin: 0;
+        padding: 0;
+    }
+    .responsive-menu-wrap .slicknav_menu:hover {
+        background: rgba(0, 0, 0, 0.9) none repeat scroll 0 0;
+    }
+    .main-menu {
+        display: none;
+    }
+    .hero-area {
+        height: 100%;
+    }
+    .hero-text-right img {
+        padding-top: 40px;
+    }
+    .hero-text-left h1{
+        font-size: 20px;
+    }
+    .hero-text-left p {
+        font-size: 16px;
+    }
+    .services-text p {
+        font-size: 16px !important;
+    }
+    .services-text h2 {
+        font-size: 20px;
+    }
+    .marketing-plan-area h2 {
+        font-size: 20px;
+        width: 100%;
+    }
+    .marketing-plan-area p {
+        font-size: 16px;
+    }
+    .website-build-area h2, .google-area h2, .social-area h2 {
+        font-size: 20px;
+    }
+    .social-area h3 {
+        font-size: 20px;
+        width: 100%;
+    }
+    .seo h4, .social-media h4 {
+        font-size: 20px;
+    }
+    .website-build-area img, .google-area img, .social-area img{
+        padding-top: 40px;
+    }
+    .website-build-area h2, .google-area h2{
+        width: 100%;
+    }
+}
+
+    
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+    
+}

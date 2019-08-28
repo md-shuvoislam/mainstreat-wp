@@ -51,6 +51,16 @@ require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-output.p
 // Adds the Genesis Connect WooCommerce notice.
 require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.php';
 
+/**
+ * TGM Activation
+ */
+require_once get_stylesheet_directory() . '/inc/tgm/tgm-init.php';
+
+/**
+ * Theme Option.
+ */
+require_once get_stylesheet_directory() . '/inc/options-init_php.php';
+
 add_action( 'after_setup_theme', 'genesis_child_gutenberg_support' );
 /**
  * Adds Gutenberg opt-in features and styling.
@@ -76,7 +86,64 @@ function genesis_sample_enqueue_scripts_styles() {
 		CHILD_THEME_VERSION
 	);
 
+	wp_enqueue_style(
+		'bootstrap',
+		 get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css',
+		 array(),
+		CHILD_THEME_VERSION
+	);
+
+	wp_enqueue_style(
+		'font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css',
+		array(),
+		CHILD_THEME_VERSION
+	);
+
+	wp_enqueue_style(
+		'animate', get_stylesheet_directory_uri() . '/assets/css/animate.css',
+		array(),
+		CHILD_THEME_VERSION
+	);
+
+	wp_enqueue_style(
+		'owl-carousel', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.min.css',
+		array(),
+		CHILD_THEME_VERSION
+	);
+
+	wp_enqueue_style(
+		'owl-theme', get_stylesheet_directory_uri() . '/assets/css/owl.theme.default.min.css',
+		array(),
+		CHILD_THEME_VERSION
+	);
+
+	wp_enqueue_style(
+		'magnific-popup', get_stylesheet_directory_uri() . '/assets/css/magnific-popup.css',
+		array(),
+		CHILD_THEME_VERSION
+	);
+
+	wp_enqueue_style(
+		'slicknav', get_stylesheet_directory_uri() . '/assets/css/slicknav.min.css',
+		array(),
+		CHILD_THEME_VERSION
+	);
+
+	wp_enqueue_style(
+		'fs-lola-fonts', get_stylesheet_directory_uri() . '/assets/fonts/fs-styles.css',
+		array(),
+		CHILD_THEME_VERSION
+	);
+
+	wp_enqueue_style(
+		'sfc-regular-fonts', get_stylesheet_directory_uri() . '/assets/fonts/sfc-regular-stylesheet.css',
+		array(),
+		CHILD_THEME_VERSION
+	);
+
 	wp_enqueue_style( 'dashicons' );
+
+	/* theme js */
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 	wp_enqueue_script(
@@ -86,19 +153,54 @@ function genesis_sample_enqueue_scripts_styles() {
 		CHILD_THEME_VERSION,
 		true
 	);
-
 	wp_localize_script(
 		'genesis-sample-responsive-menu',
 		'genesis_responsive_menu',
 		genesis_sample_responsive_menu_settings()
 	);
-
 	wp_enqueue_script(
 		'genesis-sample',
 		get_stylesheet_directory_uri() . '/js/genesis-sample.js',
 		array( 'jquery' ),
 		CHILD_THEME_VERSION,
 		true
+	);
+	wp_enqueue_script(
+		'bootstrap', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js',
+		array( 'jquery' ),
+		CHILD_THEME_VERSION,
+		true
+	);
+	wp_enqueue_script(
+		'magnific-popup', get_stylesheet_directory_uri() . '/assets/js/jquery.magnific-popup.min.js',
+		array( 'jquery' ),
+		CHILD_THEME_VERSION, 
+		true
+	);
+	wp_enqueue_script(
+		'owl-carousel', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js',
+		array( 'jquery' ),
+		CHILD_THEME_VERSION, 
+		true
+	);
+	wp_enqueue_script(
+		'slicknav', get_stylesheet_directory_uri() . '/assets/js/jquery.slicknav.min.js',
+		array( 'jquery' ),
+		CHILD_THEME_VERSION, 
+		true
+	);
+	wp_enqueue_script(
+		'wow', get_stylesheet_directory_uri() . '/assets/js/wow.min.js',
+		array( 'jquery' ),
+		CHILD_THEME_VERSION,
+		true
+	);
+	
+	wp_enqueue_script(
+		'mainstreat-script', get_stylesheet_directory_uri() . '/assets/js/active.js',
+		 array('jquery'),
+		 CHILD_THEME_VERSION, 
+		 true
 	);
 
 }
