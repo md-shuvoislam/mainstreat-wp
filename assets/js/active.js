@@ -14,12 +14,20 @@
             items: 1,
             nav: true,
             dots: false,
-            autoplay: false,
+            autoplay: true,
             animateOut: 'fadeOut',
             loop: true,
-            navText: ["<i class='fa fa-arrow-left'></i>", "<i class='fa fa-arrow-right'></i>"],
+            navText: ["<i class='fa fa-long-arrow-left'></i>", "<i class='fa fa-long-arrow-right'></i>"],
             mouseDrag: false,
             touchDrag: false,
+                responsive:{
+                0:{
+                    items:1
+                },
+                768:{
+                    items:1
+                },
+            }
         });
         
         $(".main-slides").on("translate.owl.carousel", function(){

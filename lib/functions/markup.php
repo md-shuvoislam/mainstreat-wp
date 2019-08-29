@@ -1164,3 +1164,7 @@ function genesis_adjacent_entry_attr_next_post( $attributes ) {
 
 	return $attributes;
 }
+
+
+
+
