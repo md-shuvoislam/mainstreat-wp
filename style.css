@@ -769,12 +769,12 @@ a.readmore-btn {
     color: #000000;
     font-size: 40px;
     font-weight: 700;
-    padding-top: 40px;
+    padding-top: 0px;
 }
 .website-build-area p, .google-area p, .social-area p {
     color: #575757;
     font-size: 16px;
-    padding: 20px 0;
+    padding: 5px 0;
 }
 .website-build-area h2, .google-area h2{
     width: 53%;
@@ -792,7 +792,7 @@ a.readmore-btn {
     font-size: 25px;
     color: #000000;
     width: 96%;
-    padding-top: 40px;
+    padding-top: 0px;
 }
 .seo h4, .social-media h4 {
     color: #000000;
@@ -805,8 +805,8 @@ a.readmore-btn {
 
 /* footer menu area */
 .footer-menu-area {
-    background: #fb4d3d;
-    padding: 40px 0;
+	background: #fb4d3d;
+	padding: 40px 0 20px 0;
 }
 
 /* Screen Reader Text
@@ -1909,8 +1909,23 @@ li.linkedin a {
 .site-footer p {
 	margin-bottom: 0;
 }
+.get-btn a {
+	text-decoration: none;
+	color: #655000;
+	text-transform: capitalize;
+	display: inline-block;
+	background: #e9c335;
+	padding: 17px 40px;
+	border-radius: 3px;
+	font-size: 20px;
+}
 
-
+.footer-menu-area .site-header {
+	background-color: transparent;
+	box-shadow: none;
+	padding: 0px 0px;
+	position: unset;
+}
 /* Media Queries
 ---------------------------------------------------------------------------- */
 

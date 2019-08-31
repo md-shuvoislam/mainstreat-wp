@@ -22,7 +22,7 @@ get_header();
                     </div>
                     <div class="col-md-6">
                         <div class="hero-text-right">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/hero-image.png" alt="">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero-image.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ get_header();
                 <div class="row text-center">
                     <div class="col-md-4">
                         <div class="services-item">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/services-icon.png" alt="">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-icon.png" alt="">
                             <h3>OWeb Design Service</h3>
                             <p>Your business website design matters. You need a website design that tells your story represents you...</p>
                             <a href="#" class="readmore-btn">Read More</a>
@@ -57,7 +57,7 @@ get_header();
                     </div>
                     <div class="col-md-4">
                         <div class="services-item">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/services-icon-2.png" alt="">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-icon-2.png" alt="">
                             <h3>Search Engine Marketing</h3>
                             <p>Your business website design matters. You need a website design that tells your story represents you...</p>
                             <a href="#" class="readmore-btn">Read More</a>
@@ -65,7 +65,7 @@ get_header();
                     </div>
                     <div class="col-md-4">
                         <div class="services-item">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/services-icon-3.png" alt="">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-icon-3.png" alt="">
                             <h3>Social Media Marketing</h3>
                             <p>Your business website design matters. You need a website design that tells your story represents you...</p>
                             <a href="#" class="readmore-btn">Read More</a>
@@ -98,7 +98,7 @@ get_header();
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/website-build.png" alt="website-build">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/website-build.png" alt="website-build">
                     </div>
                     <div class="col-md-6">
                         <h2>Build Your Own Website?</h2>
@@ -131,7 +131,7 @@ get_header();
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/google-area-img.png" alt="googlearea">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/google-area-img.png" alt="googlearea">
                     </div>
                 </div>
             </div>
@@ -151,7 +151,7 @@ get_header();
                </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/social-area-img.png" alt="website-build">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/social-area-img.png" alt="website-build">
                     </div>
                     <div class="col-md-6">
                         <h3>We offer full range of SEO & Digital Marketing services</h3>
@@ -160,7 +160,7 @@ get_header();
                         
                         <div class="row seo">
                             <div class="col-md-2">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/elips.png" alt="website-build">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/elips.png" alt="website-build">
                             </div>
                             <div class="col-md-10">
                                 <h4>Seo</h4>
@@ -169,7 +169,7 @@ get_header();
                         </div>
                         <div class="row social-media">
                             <div class="col-md-2">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/share-circle.png" alt="website-build">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/share-circle.png" alt="website-build">
                             </div>
                             <div class="col-md-10">
                                 <h4>Social Media</h4>
@@ -200,10 +200,10 @@ get_header();
                </div>
                <div class="rwo">
 	               	<div class="col-md-6 text-right">
-	               		<img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/Facebook.jpg" alt="website-build">
+	               		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Facebook.jpg" alt="website-build">
 	               	</div>
 	               	<div class="col-md-6">
-	               		<img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/Google.png" alt="website-build">
+	               		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Google.png" alt="website-build">
 	               	</div>
                </div>
         	</div>
@@ -223,17 +223,17 @@ get_header();
         		<div class="row text-center">
         			<div class="main-slides owl-carousel owl-theme">
 					    <div class="item">
-					    	<img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/testimonial-logo.png" alt="website-build">
+					    	<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/testimonial-logo.png" alt="website-build">
 					    	<h3>Back to Nature Lifestyle Medicine</h3>
 					    	<p>What a fantastic company to work with. I love that I can actually talk to a person and tell them how I would like my webpage done and they create a beautiful site for us. Very helpful and they did more than we had expected.</p>
 					    </div>
 					    <div class="item">
-					    	<img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/testimonial-logo.png" alt="website-build">
+					    	<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/testimonial-logo.png" alt="website-build">
 					    	<h3>Back to Nature Lifestyle Medicine one</h3>
 					    	<p>What a fantastic company to work with. I love that I can actually talk to a person and tell them how I would like my webpage done and they create a beautiful site for us. Very helpful and they did more than we had expected.</p>
 					    </div>
 					    <div class="item">
-					    	<img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/testimonial-logo.png" alt="website-build">
+					    	<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/testimonial-logo.png" alt="website-build">
 					    	<h3>Back to Nature Lifestyle Medicine two</h3>
 					    	<p>What a fantastic company to work with. I love that I can actually talk to a person and tell them how I would like my webpage done and they create a beautiful site for us. Very helpful and they did more than we had expected.</p>
 					    </div>
@@ -266,20 +266,8 @@ get_header();
         <div class="footer-menu-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2">
-                        <div class="site-logo">                             
-                            <a href="index.html"><img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/img/logo.png" alt="site-logo"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-10">
-                        <div class="main-menu">
-                            <ul id="navigation">
-                                <li class="active"><a data-scroll href="#">White Label Web Design</a></li>
-                                <li><a data-scroll href="#">Email Marketing Video Series</a></li>
-                                <li><a data-scroll href="">Website Design</a></li>
-                                <li><a data-scroll href="">Search Engine</a></li>
-                            </ul>
-                        </div>
+                    <div class="col-md-12">
+                        <?php do_action( 'genesis_header' ); ?>
                     </div>
                 </div>
             </div>
