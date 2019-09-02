@@ -146,6 +146,18 @@ function genesis_sample_enqueue_scripts_styles() {
 		CHILD_THEME_VERSION
 	);
 
+	wp_enqueue_style(
+			'lola-regular-fonts', get_stylesheet_directory_uri() . '/assets/fonts/lola-regular.css',
+			array(),
+			CHILD_THEME_VERSION
+	);
+	wp_enqueue_style(
+		'owl-theme', get_template_directory_uri() . '/assets/css/owl.theme.default.min.css',
+		array(),
+		CHILD_THEME_VERSION
+	);
+		
+
 	
 	
 
@@ -364,3 +376,528 @@ function genesis_sample_comments_gravatar( $args ) {
 	return $args;
 
 }
+
+function header_top_area(){
+    ob_start();
+    ?>
+	
+	<div class="header-top-area">
+		<div class="container">
+			<div class="row">
+				<?php wp_nav_menu( array( 'theme_location' => 'header-secondary' ) ); ?>
+			</div>
+		</div>
+	</div>
+	
+    <?php
+    echo ob_get_clean();
+}
+add_action('header_top','header_top_area');
+
+
+function footer_top_menu(){
+    ob_start();
+    ?>
+	
+<div class="row">
+	<div class="col-lg-2 col-md-12">
+		<div class="site-logo">
+			<?php the_custom_logo(); ?>
+		</div>
+	</div>
+	<div class="col-lg-10 col-md-12">
+		<div class="main-menu">
+			<?php wp_nav_menu( array( 'theme_location' => 'secondary-footer-menu' ) ); ?>
+		</div>
+	</div>
+</div>
+	
+    <?php
+    echo ob_get_clean();
+
+}
+add_action('footer_top','footer_top_menu');
+
+
+
+
+
+function hero_area( $meta_boxes ) {
+	$prefix = 'hero';
+
+	$meta_boxes[] = array(
+		'id' => 'untitled',
+		'title' => esc_html__( 'Hero Area', 'genesis-sample' ),
+		'post_types' => array('page' ),
+		'context' => 'after_editor',
+		'priority' => 'default',
+		'autosave' => 'true',
+		'fields' => array(
+			array(
+				'id' => 'hero_text',
+				'name' => esc_html__( 'Hero area text', 'genesis-sample' ),
+				'type' => 'wysiwyg',
+				'desc' => esc_html__( 'Hero area text', 'genesis-sample' ),
+			),
+			array(
+				'id' => 'hero_btn_link',
+				'type' => 'text',
+				'name' => esc_html__( 'Hero btn link', 'genesis-sample' ),
+			),
+			array(
+			    'name'             => 'Hero Image',
+			    'id'               => 'hero_image',
+			    'type'             => 'image',
+			    'force_delete'     => false,
+			),
+
+		),
+	);
+
+	return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'hero_area' );
+
+function services_area( $meta_boxes ) {
+	$prefix = 'serviesareahh';
+
+	$meta_boxes[] = array(
+		'id' => 'serviesarea',
+		'title' => esc_html__( 'Services Area', 'genesis-sample' ),
+		'post_types' => array('page' ),
+		'context' => 'after_editor',
+		'priority' => 'default',
+		'autosave' => 'true',
+		'fields' => array(
+			array(
+				'id' => 'services-heading',
+				'name' => esc_html__( 'Services area heading', 'genesis-sample' ),
+				'type' => 'wysiwyg',
+				'desc' => esc_html__( 'Services area heading', 'genesis-sample' ),
+			),
+
+		),
+	);
+
+	return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'services_area' );
+
+
+
+add_filter( 'rwmb_meta_boxes', 'meta_box_tabs_demo_register' );
+function meta_box_tabs_demo_register( $meta_boxes ) {
+    // 1st Meta Box
+    $meta_boxes[] = array(
+        'title' => 'services items',
+		'id' => 'services-items',
+		'post_types' => array('page'),
+		'context' => 'after_editor',
+		'priority' => 'high',
+		'tab_style' => 'default',
+		'tab_wrapper' => true,
+
+        // List of tabs, in one of the following formats:
+        // 1) key => label
+        // 2) key => array( 'label' => Tab label, 'icon' => Tab icon )
+        'tabs'      => array(
+            'servicesone' => array(
+                'label' => 'Services Box One',
+                'icon'  => 'dashicons-admin-generic', // Dashicon
+            ),
+            'servicestwo'  => array(
+                'label' => 'Services Box Two',
+                'icon'  => 'dashicons-admin-generic', // Dashicon
+            ),
+            'servicesthree'    => array(
+                'label' => 'Services Box Three',
+                'icon'  => 'dashicons-admin-generic', // Custom icon, using image
+            ),
+        ),
+
+        // Tab style: 'default', 'box' or 'left'. Optional
+        'tab_style' => 'default',
+
+        // Show meta box wrapper around tabs? true (default) or false. Optional
+        'tab_wrapper' => true,
+
+        'fields'    => array(
+
+            array(
+                'name' => 'Service One Image',
+                'id'   => 'serviceoneimage',
+                'type'             => 'image',
+			    'force_delete'     => false,
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicesone',
+            ),
+            array(
+                'name' => 'Service One Heading',
+                'id'   => 'serviceoneheading',
+                'type' => 'text',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicesone',
+            ),
+            array(
+                'name' => 'Service One Texts',
+                'id'   => 'serviceonetexts',
+                'type' => 'textarea',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicesone',
+            ),
+            array(
+                'name' => 'Service One Button',
+                'id'   => 'serviceonebutton',
+                'type' => 'text',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicesone',
+            ),
+
+            // services two
+
+            array(
+                'name' => 'Service Two Image',
+                'id'   => 'servicetwoeimage',
+                'type' => 'image',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicestwo',
+            ),
+            array(
+                'name' => 'Service Two Heading',
+                'id'   => 'servicetwoheading',
+                'type' => 'text',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicestwo',
+            ),
+            array(
+                'name' => 'Service Two Texts',
+                'id'   => 'servicetwotexts',
+                'type' => 'textarea',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicestwo',
+            ),
+            array(
+                'name' => 'Service Two Button',
+                'id'   => 'servicetwobutton',
+                'type' => 'text',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicestwo',
+            ),
+            
+
+            // services three
+            array(
+                'name' => 'Service Three Image',
+                'id'   => 'servicethreeeimage',
+                'type' => 'image',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicesthree',
+            ),
+            array(
+                'name' => 'Service Three Heading',
+                'id'   => 'servicethreeheading',
+                'type' => 'text',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicesthree',
+            ),
+            array(
+                'name' => 'Service Three Texts',
+                'id'   => 'servicethreetexts',
+                'type' => 'textarea',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicesthree',
+            ),
+            array(
+                'name' => 'Service Three Button',
+                'id'   => 'servicethreebutton',
+                'type' => 'text',
+
+                // Which tab this field belongs to? Put tab key here
+                'tab'  => 'servicesthree',
+            ),
+        ),
+    );
+    return $meta_boxes;
+}
+
+
+function marketing_area( $meta_boxes ) {
+	$prefix = 'servicesheadings';
+
+	$meta_boxes[] = array(
+		'id' => 'servicesh',
+		'title' => esc_html__( 'Marketing Text', 'genesis-sample' ),
+		'post_types' => array('page' ),
+		'context' => 'after_editor',
+		'priority' => 'default',
+		'autosave' => 'false',
+		'fields' => array(
+			array(
+			    'name'    => 'Marketing Texts',
+			    'id'      => 'marketingtexts',
+			    'type'    => 'wysiwyg',
+			),
+			array(
+                'name' => 'Marketing Button Link',
+                'id'   => 'marketingbtnlink',
+                'type' => 'text',
+            ),
+		),
+	);
+
+	return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'marketing_area' );
+
+
+function website_build_area( $meta_boxes ) {
+	$prefix = 'websitebuild';
+
+	$meta_boxes[] = array(
+		'id' => 'website',
+		'title' => esc_html__( 'Website Build Area', 'genesis-sample' ),
+		'post_types' => array('page' ),
+		'context' => 'after_editor',
+		'priority' => 'default',
+		'autosave' => 'false',
+		'fields' => array(
+			array(
+			    'name'    => 'Website Texts',
+			    'id'      => 'website_build_text',
+			    'type'    => 'wysiwyg',
+			),
+			array(
+                'name' => 'Website Button Link',
+                'id'   => 'website_btn_link',
+                'type' => 'text',
+            ),
+			array(
+                'name' => 'Website Image',
+                'id'   => 'imagewebsite',
+                'type' => 'image',
+                'image_size'       => 'full',
+
+            )
+
+		),
+	);
+
+	return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'website_build_area' );
+
+
+
+function goolge_area( $meta_boxes ) {
+	$prefix = 'googlearea';
+
+	$meta_boxes[] = array(
+		'id' => 'googlearea',
+		'title' => esc_html__( 'Google Area', 'genesis-sample' ),
+		'post_types' => array('page' ),
+		'context' => 'after_editor',
+		'priority' => 'default',
+		'autosave' => 'false',
+		'fields' => array(
+			array(
+			    'name'    => 'Goolge Texts',
+			    'id'      => 'goolge_text',
+			    'type'    => 'wysiwyg',
+			),
+			array(
+                'name' => 'Google Button Link',
+                'id'   => 'google_btn_link',
+                'type' => 'text',
+            ),
+			array(
+                'name' => 'Google Image',
+                'id'   => 'googleimage',
+                'type' => 'image',
+                'image_size'       => 'full',
+
+            )
+
+		),
+	);
+
+	return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'goolge_area' );
+
+
+function addtional_area( $meta_boxes ) {
+	$prefix = 'addition';
+
+	$meta_boxes[] = array(
+		'id' => 'additionarea',
+		'title' => esc_html__( 'Additional Area', 'genesis-sample' ),
+		'post_types' => array('page' ),
+		'context' => 'after_editor',
+		'priority' => 'default',
+		'autosave' => 'false',
+		'fields' => array(
+			array(
+			    'name'    => 'Additional Heading',
+			    'id'      => 'addotonalheading',
+			    'type'    => 'wysiwyg',
+			    'raw'     => false,
+			    'options' => array(
+			        'textarea_rows' => 4,
+			        'teeny'         => true,
+			    ),
+			),
+			array(
+			    'name'    => 'Addition Texts',
+			    'id'      => 'addition_text',
+			    'type'    => 'wysiwyg',
+			),
+			array(
+                'name' => 'Addition Button Link',
+                'id'   => 'addition_btn_link',
+                'type' => 'text',
+            ),
+			array(
+                'name' => 'Addition Image',
+                'id'   => 'additionimage',
+                'type' => 'image',
+                'image_size'       => 'full',
+
+            )
+
+		),
+	);
+
+	return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'addtional_area' );
+
+
+function social_heading( $meta_boxes ) {
+	$prefix = 'socialara';
+
+	$meta_boxes[] = array(
+		'id' => 'socialh',
+		'title' => esc_html__( 'Social Area', 'genesis-sample' ),
+		'post_types' => array('page' ),
+		'context' => 'after_editor',
+		'priority' => 'default',
+		'autosave' => 'false',
+		'fields' => array(
+			array(
+			    'name'    => 'Social Heading',
+			    'id'      => 'socialheading',
+			    'type'    => 'wysiwyg',
+			    'raw'     => false,
+			    'options' => array(
+			        'textarea_rows' => 4,
+			        'teeny'         => true,
+			    ),
+			),
+			array(
+                'name' => 'Social Image',
+                'id'   => 'socialimage',
+                'type' => 'image',
+                'image_size'       => 'full',
+
+            ),
+            array(
+                'name' => 'Social Right Text',
+                'id'   => 'socialrighttext',
+                'type' => 'wysiwyg',
+                'options' => array(
+			        'textarea_rows' => 4,
+			        'teeny'         => true,
+			    ),
+            ),
+            array(
+                'name' => 'Seo Text',
+                'id'   => 'seotext',
+                'type' => 'wysiwyg',
+                'options' => array(
+			        'textarea_rows' => 4,
+			        'teeny'         => true,
+			    ),
+            ),
+
+            array(
+                'name' => 'Social Text',
+                'id'   => 'socialtext',
+                'type' => 'wysiwyg',
+                'options' => array(
+			        'textarea_rows' => 4,
+			        'teeny'         => true,
+			    ),
+            ),
+            array(
+                'name' => 'Social Button Link',
+                'id'   => 'socialbtnlink',
+                'type' => 'text',
+
+            ),
+            
+		),
+	);
+
+	return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'social_heading' );
+
+
+
+
+
+function review_area( $meta_boxes ) {
+	$prefix = 'reviewarea';
+
+	$meta_boxes[] = array(
+		'id' => 'review',
+		'title' => esc_html__( 'Services Heading', 'genesis-sample' ),
+		'post_types' => array('page' ),
+		'context' => 'after_editor',
+		'priority' => 'default',
+		'autosave' => 'false',
+		'fields' => array(
+			array(
+			    'name'    => 'Review Heading',
+			    'id'      => 'revoewheading',
+			    'type'    => 'wysiwyg',
+			    'raw'     => false,
+			    'options' => array(
+			        'textarea_rows' => 4,
+			        'teeny'         => true,
+			    ),
+			),
+			array(
+                'name' => 'Review Image One',
+                'id'   => 'socialreviewimageone',
+                'type' => 'image',
+                'image_size'       => 'full',
+
+            ),
+            array(
+                'name' => 'Review Image Two',
+                'id'   => 'socialreviewimagetwo',
+                'type' => 'image',
+                'image_size'       => 'full',
+
+            ),
+
+		),
+	);
+
+	return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'review_area' );
+
+

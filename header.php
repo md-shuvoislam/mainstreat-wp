@@ -68,6 +68,8 @@ genesis_markup(
  */
 do_action( 'genesis_before_header' );
 
+do_action('header_top');
+
 /**
  * Fires to display the main header content.
  *

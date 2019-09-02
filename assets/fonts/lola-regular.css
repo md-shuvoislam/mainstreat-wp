@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'FS Lola';
+    src: url('FSLola.woff2') format('woff2'),
+        url('FSLola.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

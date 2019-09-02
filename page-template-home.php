@@ -10,19 +10,28 @@ get_header();
         <!-- Hero area Start -->
         <div class="hero-area">
             <div class="container">
-                <div class="row section-padding">
+                <div class="row section-padding hero-area-texts">
                     <div class="col-md-6">
                         <div class="hero-text-left">
-                            <h1>GET THE RESULTS YOU WANT</h1>
-                            <p>Set Your Goals and Let's Achieve Them Together</p>
+                            <?php
+                                $herotext = rwmb_meta('hero_text');
+                                echo $herotext;
+                            ?>
                             <div class="website-btn">
-                                <a href="#">Let’s Connect<i class="fa fa-long-arrow-right"></i></a>
+                                <?php $herobtnlink = rwmb_meta('hero_btn_link'); ?>
+
+                                <a href="<?php echo $herobtnlink; ?>">Let’s Connect<i class="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="hero-text-right">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero-image.png" alt="">
+                            <?php
+                                $images = rwmb_meta( 'hero_image', array( 'size' => 'full' ) );
+                                foreach ( $images as $image ) {
+                                    echo '<a href="', $image['full_url'], '"><img src="', $image['url'], '"></a>';
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -41,34 +50,81 @@ get_header();
                 <div class="row">
                    <div class="col-md-6 col-md-offset-3 text-center">
                        <div class="services-text">
-                           <p>What We Offer</p>
-                           <h2>Our Services</h2>
+                            <?php
+                                $serviceshe = rwmb_meta('services-heading');
+                                echo $serviceshe;
+                            ?>
                        </div>
                    </div>
                </div>
                 <div class="row text-center">
                     <div class="col-md-4">
                         <div class="services-item">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-icon.png" alt="">
-                            <h3>OWeb Design Service</h3>
-                            <p>Your business website design matters. You need a website design that tells your story represents you...</p>
-                            <a href="#" class="readmore-btn">Read More</a>
+                           <?php $images = rwmb_meta( 'serviceoneimage', array( 'limit' => 1 ) );
+                                $image = reset( $images );
+                                ?>
+                            <img src="<?php echo $image['url']; ?>">
+                            <h3>
+                                <?php
+                                    $serviceoneh = rwmb_meta('serviceoneheading');
+                                    echo $serviceoneh;
+                                ?>
+                            </h3>
+                            <p>
+                                <?php
+                                    $serviceonetxt = rwmb_meta('serviceonetexts');
+                                    echo $serviceonetxt;
+                                ?>
+                            </p>
+                            <?php $serviceonebtn = rwmb_meta('serviceonebutton'); ?>
+                            <a href="<?php echo $serviceonebtn; ?>" class="readmore-btn">Read More</a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="services-item">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-icon-2.png" alt="">
-                            <h3>Search Engine Marketing</h3>
-                            <p>Your business website design matters. You need a website design that tells your story represents you...</p>
-                            <a href="#" class="readmore-btn">Read More</a>
+                             <?php $images = rwmb_meta( 'servicetwoeimage', array( 'limit' => 1 ) );
+                                $image = reset( $images );
+                                ?>
+                            <img src="<?php echo $image['url']; ?>">
+                            <h3>
+                                <?php
+                                    $servicetwoh = rwmb_meta('servicetwoheading');
+                                    echo $servicetwoh;
+                                ?>
+                            </h3>
+                            <p>
+                                <?php
+                                    $servicetwotxt = rwmb_meta('servicetwotexts');
+                                    echo $servicetwotxt;
+                                ?>
+                            </p>
+                            <?php $servicetwobtn = rwmb_meta('servicetwobutton'); ?>
+                            <a href="<?php echo $servicetwobtn; ?>" class="readmore-btn">Read More</a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="services-item">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-icon-3.png" alt="">
-                            <h3>Social Media Marketing</h3>
-                            <p>Your business website design matters. You need a website design that tells your story represents you...</p>
-                            <a href="#" class="readmore-btn">Read More</a>
+
+                             <?php $images = rwmb_meta( 'servicethreeeimage', array( 'limit' => 1 ) );
+                                $image = reset( $images );
+                                ?>
+                            <img src="<?php echo $image['url']; ?>">
+                            <h3>
+                                <?php
+                                    $servicetwoh = rwmb_meta('servicethreeheading');
+                                    echo $servicetwoh;
+                                ?>
+                            </h3>
+                            <p>
+                                <?php
+                                    $servicetwotxt = rwmb_meta('servicethreetexts');
+                                    echo $servicetwotxt;
+                                ?>
+                            </p>
+
+                           <?php $servicethreebtn = rwmb_meta('servicethreebutton'); ?>
+                            <a href="<?php echo $servicethreebtn; ?>" class="readmore-btn">Read More</a>
+
                         </div>
                     </div>
                 </div>
@@ -81,10 +137,13 @@ get_header();
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Find Out What You've Been Missing In Your Marketing Plan</h2>
-                        <p>Schedule a call to learn more</p>
+                         <?php
+                            $marketingtextss = rwmb_meta('marketingtexts');
+                            echo $marketingtextss;
+                        ?>
                         <div class="website-btn">
-                            <a href="#">Call Now<i class="fa fa-long-arrow-right"></i></a>
+                            <?php $marketingbtn = rwmb_meta('marketingbtnlink'); ?>
+                            <a href="<?php echo $marketingbtn; ?>">Call Now<i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -98,16 +157,22 @@ get_header();
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/website-build.png" alt="website-build">
+                        <?php
+                            $images = rwmb_meta( 'imagewebsite', array( 'size' => 'full' ) );
+                            foreach ( $images as $image ) {
+                                echo '<a href="', $image['full_url'], '"><img src="', $image['url'], '"></a>';
+                            }
+                        ?>
+                        
                     </div>
                     <div class="col-md-6">
-                        <h2>Build Your Own Website?</h2>
-
-                        <p>He used one of those free website builders. Now he has a website. However, he's now spent hundreds of hours working on it instead of making sales and he's not only short cash this month, but he now has a website that makes him look very unprofessional.</p>
-
-                        <p>He's scrambling to find new customers now instead of spending quality time with his family and friends doing the things he loves all because he wanted to save a few bucks.</p>
+                        <?php
+                            $websitetexts = rwmb_meta('website_build_text');
+                            echo $websitetexts;
+                        ?>
                         <div class="website-btn">
-                            <a href="#">Learn More</a>
+                            <?php $websitebtn = rwmb_meta('website_btn_link'); ?>
+                            <a href="<?php echo $websitebtn; ?>">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -121,17 +186,22 @@ get_header();
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Get Found on Google</h2>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+                         <?php
+                            $googletexts = rwmb_meta('goolge_text');
+                            echo $googletexts;
+                        ?>
                         <div class="website-btn">
-                            <a href="#">Learn More</a>
+                            <?php $googlebtn = rwmb_meta('google_btn_link'); ?>
+                            <a href="<?php echo $googlebtn; ?>">Learn More</a>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/google-area-img.png" alt="googlearea">
+                        <?php
+                            $images = rwmb_meta( 'googleimage', array( 'size' => 'full' ) );
+                            foreach ( $images as $image ) {
+                                echo '<a href="', $image['full_url'], '"><img src="', $image['url'], '"></a>';
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -144,27 +214,37 @@ get_header();
                 <div class="row">
                    <div class="col-md-6 col-md-offset-3 text-center">
                        <div class="services-text">
-                           <p>Our Other Services</p>
-                           <h2>Social Media For Business</h2>
+                            <?php
+                                $socialhed = rwmb_meta('socialheading');
+                                echo $socialhed;
+                            ?>
                        </div>
                    </div>
                </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/social-area-img.png" alt="website-build">
+                        <?php
+                            $images = rwmb_meta( 'socialimage', array( 'size' => 'full' ) );
+                            foreach ( $images as $image ) {
+                                echo '<a href="', $image['full_url'], '"><img src="', $image['url'], '"></a>';
+                            }
+                        ?>
                     </div>
                     <div class="col-md-6">
-                        <h3>We offer full range of SEO & Digital Marketing services</h3>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        
+                         <?php
+                                $righttext = rwmb_meta('socialrighttext');
+                                echo $righttext;
+                        ?>
+                    
                         <div class="row seo">
                             <div class="col-md-2">
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/elips.png" alt="website-build">
                             </div>
                             <div class="col-md-10">
-                                <h4>Seo</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incident.</p>
+                                <?php
+                                    $seotext = rwmb_meta('seotext');
+                                    echo $seotext;
+                                ?>
                             </div>
                         </div>
                         <div class="row social-media">
@@ -172,20 +252,58 @@ get_header();
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/share-circle.png" alt="website-build">
                             </div>
                             <div class="col-md-10">
-                                <h4>Social Media</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incident.</p>
+                                <?php
+                                    $socialtext = rwmb_meta('socialtext');
+                                    echo $socialtext;
+                                ?>
                             </div>
                         </div>
-                        
-                        
                         <div class="website-btn">
-                            <a href="#">Learn More</a>
+                            <?php $socialbtn = rwmb_meta('socialbtnlink'); ?>
+                            <a href="<?php echo $socialbtn; ?>">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
 
+        <!-- additional area Start -->
+        <div class="google-area additional-area section-padding">
+            <div class="container">
+                <div class="row">
+                   <div class="col-md-12 text-center">
+                       <div class="services-text">
+                            <?php
+                                $socialhed = rwmb_meta('addotonalheading');
+                                echo $socialhed;
+                            ?>
+                       </div>
+                   </div>
+               </div>
+                <div class="row">
+                    <div class="col-md-6">
+                         <?php
+                            $googletexts = rwmb_meta('addition_text');
+                            echo $googletexts;
+                        ?>
+                        <div class="website-btn">
+                            <?php $googlebtn = rwmb_meta('addition_btn_link'); ?>
+                            <a href="<?php echo $googlebtn; ?>">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <?php
+                            $images = rwmb_meta( 'additionimage', array( 'size' => 'full' ) );
+                            foreach ( $images as $image ) {
+                                echo '<a href="', $image['full_url'], '"><img src="', $image['url'], '"></a>';
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- additional area ends -->
 
         <!-- social review area start-->
         <div class="social-review-area section-padding">
@@ -193,17 +311,29 @@ get_header();
         		<div class="row">
                    <div class="col-md-6 col-md-offset-3 text-center">
                        <div class="services-text">
-                           <p>Our 5 Star Reviews</p>
-                           <h2>Social Media Reviews</h2>
+                            <?php
+                                $reviwheading = rwmb_meta('revoewheading');
+                                echo $reviwheading;
+                            ?>
                        </div>
                    </div>
                </div>
                <div class="rwo">
 	               	<div class="col-md-6 text-right">
-	               		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Facebook.jpg" alt="website-build">
+                        <?php
+                            $images = rwmb_meta( 'socialreviewimageone', array( 'size' => 'full' ) );
+                            foreach ( $images as $image ) {
+                                echo '<a href="', $image['full_url'], '"><img src="', $image['url'], '"></a>';
+                            }
+                        ?>
 	               	</div>
 	               	<div class="col-md-6">
-	               		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Google.png" alt="website-build">
+                        <?php
+                            $images = rwmb_meta( 'socialreviewimagetwo', array( 'size' => 'full' ) );
+                            foreach ( $images as $image ) {
+                                echo '<a href="', $image['full_url'], '"><img src="', $image['url'], '"></a>';
+                            }
+                        ?>
 	               	</div>
                </div>
         	</div>
@@ -221,24 +351,29 @@ get_header();
                    </div>
                </div>
         		<div class="row text-center">
-        			<div class="main-slides owl-carousel owl-theme">
-					    <div class="item">
-					    	<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/testimonial-logo.png" alt="website-build">
-					    	<h3>Back to Nature Lifestyle Medicine</h3>
-					    	<p>What a fantastic company to work with. I love that I can actually talk to a person and tell them how I would like my webpage done and they create a beautiful site for us. Very helpful and they did more than we had expected.</p>
-					    </div>
-					    <div class="item">
-					    	<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/testimonial-logo.png" alt="website-build">
-					    	<h3>Back to Nature Lifestyle Medicine one</h3>
-					    	<p>What a fantastic company to work with. I love that I can actually talk to a person and tell them how I would like my webpage done and they create a beautiful site for us. Very helpful and they did more than we had expected.</p>
-					    </div>
-					    <div class="item">
-					    	<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/testimonial-logo.png" alt="website-build">
-					    	<h3>Back to Nature Lifestyle Medicine two</h3>
-					    	<p>What a fantastic company to work with. I love that I can actually talk to a person and tell them how I would like my webpage done and they create a beautiful site for us. Very helpful and they did more than we had expected.</p>
-					    </div>
-					    
-					</div>
+                        <?php
+                            $args = array(
+                                'post_type'              => 'testimonial',
+                                'order'                  => 'DESC',
+                                'posts_per_page'         => '-1',
+                            );
+
+                            $testimonial = new WP_Query( $args );
+
+                            if ( $testimonial->have_posts() ) {
+                                echo '<div class="main-slides owl-carousel owl-theme">';
+                                 while ( $testimonial->have_posts() ) {
+                                    $testimonial->the_post(); ?>
+                                        <div class="item">
+                                            <?php the_post_thumbnail(''); ?>
+                                            <h3><?php the_title(); ?></h3>
+                                            <p><?php the_content(); ?></p> 
+                                        </div>                          
+                                    <?php   }
+                                echo '</div>';
+                            } 
+                            wp_reset_postdata();             
+                        ?>
         		</div>
         	</div>
         </div>
@@ -265,11 +400,7 @@ get_header();
         
         <div class="footer-menu-area">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php do_action( 'genesis_header' ); ?>
-                    </div>
-                </div>
+                <?php do_action( 'footer_top' );?>
             </div>
         </div>
 <?php

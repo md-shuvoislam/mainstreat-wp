@@ -10,25 +10,53 @@
         });
         
         // Top Slider
-        $(".main-slides").owlCarousel({
+        var brandSlider = $(".main-slides");
+            brandSlider.owlCarousel({
             items: 1,
             nav: true,
             dots: false,
-            autoplay: true,
-            animateOut: 'fadeOut',
+            autoplay: false,
+            autoplayTimeout:5000,
+            slideSpeed: 300,
             loop: true,
-            navText: ["<i class='fa fa-long-arrow-left'></i>", "<i class='fa fa-long-arrow-right'></i>"],
+            navText : ["",""],
+            rewindNav : true,
             mouseDrag: false,
-            touchDrag: false,
-                responsive:{
+            touchDrag: true,
+            stagePadding:150,
+            margin:0,
+             responsive:{
                 0:{
-                    items:1
+                    items:1,
+                    center:false,
+                    stagePadding:0,
                 },
                 768:{
-                    items:1
+                    items:1,
+                    center:true,
                 },
             }
         });
+
+        function brandSliderClasses( ) {
+            brandSlider.each(function() {
+                var total = $(this).find('.owl-item.active').length;
+                $(this).find('.owl-item').removeClass('firstactiveitem');
+                $(this).find('.owl-item').removeClass('lastactiveitem');
+                $(this).find('.owl-item.active').each(function(index) {
+                 
+                        $(this).prev().addClass('firstactiveitem')
+                   
+                        $(this).next().addClass('lastactiveitem')
+                    
+                })
+            })
+        }
+        brandSliderClasses();
+        brandSlider.on('translated.owl.carousel', function(event) {
+            brandSliderClasses();
+        }); 
+
         
         $(".main-slides").on("translate.owl.carousel", function(){
             $(".top-area h1").removeClass("animated fadeInLeft").css("opacity", "0");

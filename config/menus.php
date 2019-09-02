@@ -13,4 +13,6 @@
 return array(
 	'primary'   => __( 'Header Menu', 'genesis-sample' ),
 	'secondary' => __( 'Footer Menu', 'genesis-sample' ),
+	'secondary-footer-menu' => __( 'Footer Top Menu', 'genesis-sample' ),
+	'header-secondary' => __( 'Header Top Menu', 'genesis-sample' ),
 );
